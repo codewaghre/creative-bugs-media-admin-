@@ -1,14 +1,17 @@
 import { getEventDetails } from "@/actions/events";
 
+
+
 export async function GET(req) {
     const url = new URL(req.url);
     const username = url.searchParams.get("username");
     const eventId = url.searchParams.get("eventId");
+    const allowedOrigin = process.env.CROSS_ORIGIN;
 
 
     // CORS headers
     const headers = {
-        "Access-Control-Allow-Origin": "*", // Replace * with 'http://localhost:5173' in production
+        "Access-Control-Allow-Origin": `${allowedOrigin}`,
         "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type",
     };

@@ -1,10 +1,13 @@
 import { createBooking } from "@/actions/bookings";
 
 export async function POST(req) {
+
+    const allowedOrigin = process.env.CROSS_ORIGIN;
+
     const headers = {
-        "Access-Control-Allow-Origin": "*", // Allow from any origin (for development, use specific domain for production)
-        "Access-Control-Allow-Methods": "POST, OPTIONS", // Allow only POST and OPTIONS methods
-        "Access-Control-Allow-Headers": "Content-Type, Authorization", // Allow content-type header and authorization if needed
+        "Access-Control-Allow-Origin": `${allowedOrigin}`,
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
     };
 
     // Handle OPTIONS request for CORS preflight
