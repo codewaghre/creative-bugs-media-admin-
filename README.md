@@ -1,8 +1,6 @@
 # Full Stack Calendly Clone with Next JS, React, Tailwind CSS, Prisma, Neon, Clerk, Shadcn UI Tutorial 🔥🔥
 
-
-[Screenshot (51)](https://github.com/user-attachments/assets/c6846f1c-91df-47b7-b1c9-636a39fadd66)
-
+![Image](https://github.com/user-attachments/assets/2d50844a-90c0-4682-95bd-47f94ea745cd)
 
 ### Make sure to create a `.env` file with following variables -
 
