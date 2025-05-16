@@ -5,8 +5,8 @@ export async function GET(req) {
     const allowedOrigin = process.env.CROSS_ORIGIN;
 
     const headers = {
-        "Access-Control-Allow-Origin": allowedOrigin,
-        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Origin": allowedOrigin || '*',
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
         "Access-Control-Allow-Credentials": "true",
     };
