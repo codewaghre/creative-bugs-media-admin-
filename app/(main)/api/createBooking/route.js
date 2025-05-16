@@ -8,6 +8,7 @@ export async function POST(req) {
         "Access-Control-Allow-Origin": allowedOrigin,
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
     };
 
     // Handle OPTIONS request for CORS preflight

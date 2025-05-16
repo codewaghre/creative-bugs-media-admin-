@@ -8,6 +8,7 @@ export async function GET(req) {
         "Access-Control-Allow-Origin": allowedOrigin,
         "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Allow-Credentials": "true",
     };
 
     // Handle OPTIONS request for CORS preflight
