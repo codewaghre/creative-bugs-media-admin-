@@ -2,13 +2,22 @@ import { getEventAvailability } from "@/actions/availability";
 
 
 export async function GET(req) {
-    const allowedOrigin = process.env.CROSS_ORIGIN;
+
+    const allowedOriginPath = process.env.CROSS_ORIGIN;
+
+    const allowedOrigins = [
+        "http://localhost:5173",
+        allowedOriginPath,
+    ];
+
+    const origin = req.headers.get("origin");
 
     const headers = {
-        "Access-Control-Allow-Origin": allowedOrigin || '*',
+        "Access-Control-Allow-Origin": allowedOrigins.includes(origin) ? origin : "*",
         "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
         "Access-Control-Allow-Credentials": "true",
+        "Cache-Control": "no-store",
     };
 
     // Handle OPTIONS request for CORS preflight
