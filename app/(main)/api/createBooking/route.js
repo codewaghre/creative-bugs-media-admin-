@@ -19,16 +19,21 @@ export async function POST(req) {
         "Cache-Control": "no-store",
     };
 
-    // Handle OPTIONS request for CORS preflight
-    if (req.method === "OPTIONS") {
-        return new Response(null, {
-            status: 204,
-            headers: {
-                ...headers,
-                "Access-Control-Max-Age": "3600", // Cache preflight for 1 hour
-            },
-        });
-    }
+    // // Handle OPTIONS request for CORS preflight
+    // if (req.method === "OPTIONS") {
+    //     return new Response(null, {
+    //         status: 204,
+    //         headers: {
+    //             ...headers,
+    //             "Access-Control-Max-Age": "3600", // Cache preflight for 1 hour
+    //         },
+    //     });
+    // }
+
+    // return new Response(null, {
+    //     status: 204,
+    //     headers,
+    // });
 
     try {
         const body = await req.json(); // Parse JSON body
