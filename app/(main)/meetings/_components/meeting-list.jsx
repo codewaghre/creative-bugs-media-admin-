@@ -29,14 +29,7 @@ export default function MeetingList({ meetings, type }) {
           <CardContent>
             <div className="flex items-center mb-2">
               <Calendar className="mr-2 h-4 w-4" />
-              <span>{format(new Date(meeting.startTime), "MMMM d, yyyy")}</span>
-            </div>
-            <div className="flex items-center mb-2">
-              <Clock className="mr-2 h-4 w-4" />
-              <span>
-                {format(new Date(meeting.startTime), 'h:mm a')} -{" "}
-                {format(new Date(meeting.endTime), 'h:mm a')}
-              </span>
+              <span>{format(new Date(meeting.startTime), "MMM d, yyyy h:mm a")}</span>
             </div>
             {meeting.meetLink && (
               <div className="flex items-center">
